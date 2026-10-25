@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Aurora · Unified Video Editing with a Tool-Using Agent</title>
+    <meta
+      name="description"
+      content="Aurora is an agentic video editing framework that pairs a tool-augmented VLM agent with a unified video diffusion transformer, resolving textual and visual underspecification before generation."
+    />
+    <meta name="theme-color" content="#07091a" />
+    <meta property="og:title" content="Aurora: Unified Video Editing with a Tool-Using Agent" />
+    <meta property="og:description" content="A tool-augmented VLM agent plus a unified video diffusion transformer." />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap"
+    />
+    <script type="module" crossorigin src="/Aurora-Page/assets/index-CU6Mhc86.js"></script>
+    <link rel="modulepreload" crossorigin href="/Aurora-Page/assets/lenis-CpJfINCX.js">
+    <link rel="modulepreload" crossorigin href="/Aurora-Page/assets/gsap-C8IefbVz.js">
+    <link rel="stylesheet" crossorigin href="/Aurora-Page/assets/index-DUTv3N9L.css">
+  </head>
+
+  <body>
+    <div class="aurora-ribbon" aria-hidden="true"></div>
+
+    <!-- ============================== Nav ================================ -->
+    <nav class="nav" aria-label="Section navigation">
+      <a class="nav-brand" href="#hero">
+        <span class="nav-brand-mark" aria-hidden="true"></span>
+        <span>Aurora · Project Page</span>
+      </a>
+      <div class="nav-links">
+        <a href="#method">Method</a>
+        <a href="#cases">Edits</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#bench">Benchmarks</a>
+        <a href="#transfer">Transfer</a>
+        <a href="#cite">Cite</a>
+      </div>
+    </nav>
+
+    <section class="hero" id="hero">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-bloom" aria-hidden="true"></div>
+
+      <div class="hero-overlay">
+        <div class="hero-plate" data-reveal>
+          <p class="eyebrow" style="margin-bottom:0.55rem;">
+            <span class="venue-badge">NeurIPS 2026</span>
+            Agentic · Unified · Video Editing
+          </p>
+          <h1>
+            <span class="aurora-text aurora-word">Aurora</span><br />
+            <span style="font-style: normal; color: var(--color-text);">
+              Unified Video Editing with<br />a Tool-Using Agent
+            </span>
+          </h1>
+
+          <ul class="hero-authors" aria-label="Authors">
+            <li>Yongsheng Yu<sup>1*†</sup></li>
+            <li>Ziyun Zeng<sup>1*</sup></li>
+            <li>Zhiyuan Xiao<sup>1</sup></li>
+            <li>Zhenghong Zhou<sup>1</sup></li>
+            <li>Hang Hua<sup>2</sup></li>
+            <li>Wei Xiong<sup>3</sup></li>
+            <li>Jiebo Luo<sup>1</sup></li>
+          </ul>
+          <ul class="hero-affiliations" aria-label="Affiliations">
+            <li><sup>1</sup>University of Rochester</li>
+            <li><sup>2</sup>MIT-IBM Watson AI Lab</li>
+            <li><sup>3</sup>NVIDIA</li>
+          </ul>
+          <p class="hero-notes">
+            <span><sup>*</sup>Equal contribution</span>
+            <span><sup>†</sup>Project lead</span>
+          </p>
+
+          <div class="hero-actions">
+            <a class="pill" href="https://arxiv.org/abs/2605.18748">
+              <svg class="pill-icon" viewBox="0 0 16 16" fill="none">
+                <path d="M3 2h6l4 4v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm6 0v4h4" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              </svg>
+              Paper <em style="font-style: normal; color: var(--color-text-faint); letter-spacing: 0.12em;">arXiv</em>
+            </a>
+            <a class="pill" href="https://github.com/yeates/Aurora">
+              <svg class="pill-icon" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 0a8 8 0 0 0-2.53 15.6c.4.08.55-.18.55-.4v-1.36c-2.22.48-2.69-1.07-2.69-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.81.06 1.24.83 1.24.83.72 1.24 1.89.88 2.35.67.07-.52.28-.88.51-1.08-1.77-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.13 0 0 .67-.22 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.28.82 2.15 0 3.07-1.87 3.74-3.65 3.94.29.25.55.73.55 1.48v2.2c0 .22.15.49.55.4A8 8 0 0 0 8 0z"/>
+              </svg>
+              Code
+            </a>
+            <a class="pill" href="#cases">
+              <svg class="pill-icon" viewBox="0 0 16 16" fill="none">
+                <path d="M4 3l9 5-9 5V3z" fill="currentColor"/>
+              </svg>
+              Demo reel
+            </a>
+            <a class="pill" href="#method">
+              <svg class="pill-icon" viewBox="0 0 16 16" fill="none">
+                <circle cx="8" cy="8" r="6.2" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              How it works
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-caption" aria-live="polite"></aside>
+
+        <div class="hero-progress" aria-label="Clip selector"></div>
+      </div>
+    </section>
+
+    <!-- ============================== Abstract =========================== -->
+    <section class="section shell" id="abstract">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal>Abstract</p>
+          <h2 data-reveal>Closing the gap between<br />a user's request and the model's conditions.</h2>
+        </div>
+        <p class="section-lede" data-reveal>
+          A single set of weights now covers replacement, removal, style
+          transfer, and reference-driven insertion, but only when the request
+          is already complete. Aurora turns that <em>if</em> into <em>when</em>.
+        </p>
+      </header>
+      <div class="abstract-body" data-reveal>
+        <p>
+          Recent video editing models converge on a unified conditioning
+          design: a single diffusion transformer jointly consumes text, source
+          video, and reference images, and one set of weights covers
+          replacement, removal, style transfer, and reference-driven
+          insertion. The design is flexible, but it assumes that the user
+          already provides model-ready text, reference images, and spatial
+          grounding for local edits, which real requests often omit.
+        </p>
+        <p>
+          We present <strong class="abstract-mark">Aurora</strong>, an agentic
+          video editing framework that pairs a tool-augmented vision-language
+          model agent with a unified video diffusion transformer. The VLM
+          agent maps a raw user request to a structured edit plan aligned
+          with the transformer's conditioning channels, resolving
+          <em>textual</em> and <em>visual</em> underspecification before
+          generation. We introduce
+          <strong class="abstract-mark">AgentEdit-Bench</strong> to evaluate
+          this framework along those two axes, and we show that the agent
+          transfers to compatible frozen video editing models.
+        </p>
+      </div>
+    </section>
+
+<!-- ============================== Method (pipeline) ================== -->
+    <section class="pipeline" id="method" aria-label="Aurora pipeline">
+      <div class="pipeline-stage">
+        <div class="pipeline-frame">
+          <video preload="auto" muted playsinline loop poster="/Aurora-Page/videos/pipeline.jpg">
+            <source src="/Aurora-Page/videos/pipeline.mp4" type="video/mp4" />
+          </video>
+          <div class="pipeline-fallback">
+            <button type="button" class="pill" onclick="this.parentElement.previousElementSibling.play()">
+              Play animation
+            </button>
+          </div>
+        </div>
+        <div class="pipeline-stage-labels">
+          <span class="is-active">User</span>
+          <span>Agent plan</span>
+          <span>Tools</span>
+          <span>Conditioning</span>
+          <span>Video DiT</span>
+          <span>Output</span>
+        </div>
+        <div class="pipeline-rail">
+          <span>Scroll</span>
+          <span class="track"><span class="track-fill"></span></span>
+          <span>14&nbsp;s</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== Interactive cases ================== -->
+    <section class="section shell" id="cases">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal>Edits, end to end</p>
+          <h2 data-reveal>From raw instruction to finished frame.</h2>
+        </div>
+        <p class="section-lede" data-reveal>
+          Drag the aurora line to reveal either the source or the Aurora
+          result; flip to <em>scrub</em> to step through both clips
+          frame-by-frame.
+        </p>
+      </header>
+      <div class="cases-grid" data-cases-grid></div>
+    </section>
+
+    <!-- ============================== Gallery ============================ -->
+    <section class="section shell" id="gallery">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal>Capability matrix</p>
+          <h2 data-reveal>Every benchmark case, grouped by what the model had to edit.</h2>
+        </div>
+        <p class="section-lede" data-reveal>
+          Hover any tile to bring up the prompt; click to open a side-by-side
+          comparison: source, Kiwi-Edit and UniVideo under the raw request,
+          and Aurora after the Aurora agent resolves the missing conditions.
+        </p>
+      </header>
+      <div class="gallery" data-gallery-root></div>
+    </section>
+
+    <!-- ============================== Benchmarks ========================= -->
+    <section class="section shell" id="bench">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal>Benchmarks</p>
+          <h2 data-reveal>Three benchmarks,<br />one transferable lift.</h2>
+        </div>
+      </header>
+      <div data-bench-root style="display:grid;gap:clamp(1.4rem,2.4vw,2rem);margin-top:clamp(2rem,4vw,3rem);"></div>
+    </section>
+
+    <!-- ============================== Agent transfer ===================== -->
+    <section class="section shell" id="transfer">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal>Transfer across models</p>
+          <h2 data-reveal>One agentic front-end,<br />multiple unified video editing models.</h2>
+        </div>
+        <p class="section-lede" data-reveal>
+          The Aurora agent stays frozen and model-agnostic: it rewrites the
+          user's request, invokes tools when needed, and emits a conditioning
+          tuple that different unified video editing models can consume. The
+          gain comes from the front-end paradigm, not from pairing it with
+          just one downstream model.
+        </p>
+      </header>
+
+      <div class="transfer-story-stack" data-reveal>
+        <figure class="transfer-story" data-transfer-row="kiwi">
+          <header class="transfer-row-head">
+            <span class="row-editor">Kiwi-Edit</span>
+            <span class="row-tag">raw request  →  w/ Aurora agent</span>
+          </header>
+          <div class="transfer-story-row"></div>
+          <figcaption class="transfer-story-caption" data-row-caption></figcaption>
+        </figure>
+        <figure class="transfer-story" data-transfer-row="univideo">
+          <header class="transfer-row-head">
+            <span class="row-editor">UniVideo</span>
+            <span class="row-tag">raw request  →  w/ Aurora agent</span>
+          </header>
+          <div class="transfer-story-row"></div>
+          <figcaption class="transfer-story-caption" data-row-caption></figcaption>
+        </figure>
+      </div>
+
+      <div class="transfer-cards" data-transfer-cards></div>
+
+      <div class="task-breakdown" data-reveal data-task-breakdown>
+        <header class="task-breakdown-head">
+          <div>
+            <p class="eyebrow">Per-task breakdown</p>
+            <h3>Where the Aurora agent helps the most.</h3>
+          </div>
+          <div class="task-breakdown-legend">
+            <span><span class="swatch" style="background: var(--color-text-mute);"></span>Aurora w/o agent</span>
+            <span><span class="swatch" style="background: var(--aurora-grad);"></span>Aurora w/ agent</span>
+          </div>
+        </header>
+        <div class="task-breakdown-grid" data-task-rows></div>
+      </div>
+    </section>
+
+<!-- ============================== Citation =========================== -->
+    <section class="section shell" id="cite">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal>Cite</p>
+          <h2 data-reveal>BibTeX.</h2>
+        </div>
+        <p class="section-lede" data-reveal>
+          Aurora and AgentEdit-Bench are described in the same paper. If you
+          use either, please cite the work.
+        </p>
+      </header>
+      <div class="citation-block" data-citation data-reveal>
+        <button class="citation-copy" type="button">Copy</button>
+        <pre></pre>
+      </div>
+    </section>
+
+    <!-- ============================== Footer ============================= -->
+    <footer class="footer">
+      <span>© 2026 · Aurora project page</span>
+      <span>Last updated <time datetime="2026-05-17">May 17, 2026</time></span>
+    </footer>
+
+    <!-- ============================== Lightbox =========================== -->
+    <aside class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" type="button" aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="lightbox-stage"></div>
+    </aside>
+  </body>
+</html>
